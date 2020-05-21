@@ -12,25 +12,30 @@ class ContactsTableViewController: UITableViewController {
 
     var contacts : [Contact] = []//sets up empty array
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        contacts = createContacts()
+    }
+    
     func createContacts() -> [Contact] {
 
       let sample = Contact()
         sample.name = "sally"
         sample.number = "215-356-0306"
         
-      return [sample]//returns array of contacts
+    let sample2 = Contact()
+        sample2.name = "Harry"
+        sample2.number = "555-555-5555"
+        
+      return [sample, sample2]//returns array of contacts
     }//end createContacts function
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        contacts = createContacts()
-    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
