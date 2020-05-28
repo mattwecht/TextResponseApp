@@ -35,6 +35,7 @@ class SendTextTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return texts.count//sets rows = to number of texts
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
@@ -42,6 +43,20 @@ class SendTextTableViewController: UITableViewController {
       cell.textLabel?.text = text
 
       return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let text = texts[indexPath.row]//selects the text they tapped
+        
+        //sets up confirmation alert
+        let alertController = UIAlertController(title: "Text Sent", message:
+            "\(text) sent to \(selectedContact.name)", preferredStyle: .alert)
+        
+        alertController.addAction(UIAlertAction(title: "Cool", style: .default))
+        
+        self.present(alertController, animated: true, completion: nil)
+        
     }
 
 
