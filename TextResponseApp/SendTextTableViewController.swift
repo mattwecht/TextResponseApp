@@ -18,7 +18,6 @@ class SendTextTableViewController: UITableViewController {
         super.viewDidLoad()
         texts = createTexts()
         texts.append("Select text to send to: \(selectedContact.name)")
-
     }
     
     func createTexts() -> [String]{//tester function
@@ -50,8 +49,8 @@ class SendTextTableViewController: UITableViewController {
         let text = texts[indexPath.row]//selects the text they tapped
         
         //sets up confirmation alert
-        let alertController = UIAlertController(title: "Text Sent", message:
-            "\(text) sent to \(selectedContact.name)", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Message Sent", message:
+            "\"\(text)\" sent to: \(selectedContact.name)", preferredStyle: .alert)
         
         alertController.addAction(UIAlertAction(title: "Cool", style: .default))
         

@@ -16,6 +16,7 @@
 		E03CE9262476FDFF00835E76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03CE9242476FDFF00835E76 /* LaunchScreen.storyboard */; };
 		E03CE92E2477001800835E76 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03CE92D2477001800835E76 /* ContactsTableViewController.swift */; };
 		E03CE9302477007000835E76 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03CE92F2477007000835E76 /* Contact.swift */; };
+		E04F47D12480363A005A5C7C /* AddNewTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F47D02480363A005A5C7C /* AddNewTextViewController.swift */; };
 		E0D22E462478BBCB0018A2D0 /* AddNewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D22E452478BBCB0018A2D0 /* AddNewContactViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		E03CE9272476FDFF00835E76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E03CE92D2477001800835E76 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		E03CE92F2477007000835E76 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		E04F47D02480363A005A5C7C /* AddNewTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTextViewController.swift; sourceTree = "<group>"; };
 		E0D22E452478BBCB0018A2D0 /* AddNewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +70,7 @@
 				E03CE9182476FDFB00835E76 /* SceneDelegate.swift */,
 				E03CE91C2476FDFB00835E76 /* Main.storyboard */,
 				E03CE92F2477007000835E76 /* Contact.swift */,
+				E04F47D02480363A005A5C7C /* AddNewTextViewController.swift */,
 				E03BE290247F4D3800A0B96E /* SendTextTableViewController.swift */,
 				E03CE92D2477001800835E76 /* ContactsTableViewController.swift */,
 				E0D22E452478BBCB0018A2D0 /* AddNewContactViewController.swift */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04F47D12480363A005A5C7C /* AddNewTextViewController.swift in Sources */,
 				E0D22E462478BBCB0018A2D0 /* AddNewContactViewController.swift in Sources */,
 				E03CE9212476FDFB00835E76 /* TextResponseApp.xcdatamodeld in Sources */,
 				E03CE9172476FDFB00835E76 /* AppDelegate.swift in Sources */,

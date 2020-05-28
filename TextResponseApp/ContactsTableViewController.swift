@@ -23,13 +23,12 @@ class ContactsTableViewController: UITableViewController {
         sample.name = "sally"
         sample.number = "215-356-0306"
         
-    let sample2 = Contact()
+      let sample2 = Contact()
         sample2.name = "Harry"
         sample2.number = "555-555-5555"
         
       return [sample, sample2]//returns array of contacts
     }//end createContacts function
-    
 
     // MARK: - Table view data source
 
@@ -55,14 +54,16 @@ class ContactsTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      if let addVC = segue.destination as? AddNewContactViewController {
-        addVC.previousVC = self
-      }
-        if let textVC = segue.destination as? SendTextTableViewController {
-        if let contact = sender as? Contact {
-            textVC.selectedContact = contact
-            textVC.previousVC = self
+        
+        if let addVC = segue.destination as? AddNewContactViewController {
+          addVC.previousVC = self
         }
+        
+        if let textVC = segue.destination as? SendTextTableViewController {
+            if let contact = sender as? Contact {
+                textVC.selectedContact = contact
+                textVC.previousVC = self
+            }
         }
     }
     

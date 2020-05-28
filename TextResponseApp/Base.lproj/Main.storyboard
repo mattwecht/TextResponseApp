@@ -7,6 +7,41 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Add New Text View Controller-->
+        <scene sceneID="QBe-hn-viW">
+            <objects>
+                <viewController id="W22-JZ-ddC" customClass="AddNewTextViewController" customModule="TextResponseApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UAN-PA-XTh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add your new quick message here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Xs-la-TZ2">
+                                <rect key="frame" x="92" y="194" width="230" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbM-qv-oKd">
+                                <rect key="frame" x="168" y="364" width="78" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add New"/>
+                                <connections>
+                                    <action selector="AddNewTextTapped:" destination="W22-JZ-ddC" eventType="touchUpInside" id="n5e-tz-q50"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="mcF-e2-G9I"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bXt-Vp-U8a"/>
+                    <connections>
+                        <outlet property="NewTextField" destination="7Xs-la-TZ2" id="9Tr-0i-fU7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YUn-ld-d77" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1039.1304347826087" y="-553.125"/>
+        </scene>
         <!--TextResponseApp-->
         <scene sceneID="gX8-zM-8Y3">
             <objects>
@@ -31,7 +66,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="TextResponseApp" id="Uhn-ub-zkK">
-                        <barButtonItem key="leftBarButtonItem" title="New Text" id="x2M-dz-EgD"/>
+                        <barButtonItem key="leftBarButtonItem" title="New Text" id="x2M-dz-EgD">
+                            <connections>
+                                <segue destination="W22-JZ-ddC" kind="show" id="JgD-VZ-Puy"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="New Contact" id="Xav-6a-fbE">
                             <connections>
                                 <segue destination="KX5-JD-wtB" kind="show" id="7tq-a5-4Ld"/>
