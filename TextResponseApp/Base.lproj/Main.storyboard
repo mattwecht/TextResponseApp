@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -30,12 +31,91 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="TextResponseApp" id="Uhn-ub-zkK">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Xav-6a-fbE"/>
+                        <barButtonItem key="leftBarButtonItem" title="New Text" id="x2M-dz-EgD"/>
+                        <barButtonItem key="rightBarButtonItem" title="New Contact" id="Xav-6a-fbE">
+                            <connections>
+                                <segue destination="KX5-JD-wtB" kind="show" id="7tq-a5-4Ld"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="DSH-pW-XIA" kind="show" identifier="moveToText" id="8te-Wn-jBY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eTZ-sg-Oe8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="112.5"/>
+            <point key="canvasLocation" x="1048" y="113"/>
+        </scene>
+        <!--Send Text Table View Controller-->
+        <scene sceneID="bzS-Iu-ibV">
+            <objects>
+                <tableViewController id="DSH-pW-XIA" customClass="SendTextTableViewController" customModule="TextResponseApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="oFp-l0-92x">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="oSe-Nw-bnx">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oSe-Nw-bnx" id="jGW-he-X72">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DSH-pW-XIA" id="3i0-MI-uwf"/>
+                            <outlet property="delegate" destination="DSH-pW-XIA" id="nMd-uh-Ns4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="OYT-mg-CPL"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RGx-bD-jH9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1796" y="113"/>
+        </scene>
+        <!--Add New Contact View Controller-->
+        <scene sceneID="2bn-q9-K6U">
+            <objects>
+                <viewController id="KX5-JD-wtB" customClass="AddNewContactViewController" customModule="TextResponseApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iUf-bT-WsY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDx-Ib-Eds">
+                                <rect key="frame" x="176" y="410" width="63" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add New"/>
+                                <connections>
+                                    <action selector="addNewContactTapped:" destination="KX5-JD-wtB" eventType="touchUpInside" id="oUm-yB-65a"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type a name here!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A6S-3o-8lj">
+                                <rect key="frame" x="119" y="157" width="176" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type a name here!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EDN-Fe-ar8">
+                                <rect key="frame" x="119" y="242" width="176" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="LlY-Bk-tqj"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gGV-BE-hHO"/>
+                    <connections>
+                        <outlet property="newName" destination="A6S-3o-8lj" id="pCM-Uw-GtQ"/>
+                        <outlet property="newNumber" destination="EDN-Fe-ar8" id="5VT-6N-dzm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JPU-6V-jBN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="789.50892857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gQ7-dY-8tN">

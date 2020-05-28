@@ -54,6 +54,25 @@ class ContactsTableViewController: UITableViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      if let addVC = segue.destination as? AddNewContactViewController {
+        addVC.previousVC = self
+      }
+        if let textVC = segue.destination as? SendTextTableViewController {
+        if let contact = sender as? Contact {
+            textVC.selectedContact = contact
+            textVC.previousVC = self
+        }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+      // this gives us a single ToDo
+      let toDo = contacts[indexPath.row]
+
+      performSegue(withIdentifier: "moveToText", sender: toDo)
+    }
 
     /*
     // Override to support conditional editing of the table view.

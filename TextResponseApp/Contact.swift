@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Contacts
 
 class Contact {
     var name = " "
     var number = " "
 }
+//let sample = CNContact.predicateForContacts(matchingName: "Wecht")
+
